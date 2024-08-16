@@ -9,9 +9,9 @@ const Hero = () => {
 
   return (
     <div className='hero'>
-        <div className='flex-1 pt-36 padding-x'>
+        <div className='flex-1 pt-32 padding-x'>
             <h1 className='hero__title'>
-                Find, Book, Rent a Car - Quick and Easily!
+                Find, Rent, Book, or buy a Car - Quick and Easily!
             </h1>
             <p className='hero__subtitle'>
                 Streamline your car rental experience with our effortless booking process.

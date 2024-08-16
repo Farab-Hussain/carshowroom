@@ -13,15 +13,15 @@ module.exports = {
         inter: ["Inter", "sans-serif"],
       },
       colors: {
-        "black-100": "#2B2C35",
+        "black-100": "#000",
         "primary-blue": {
           DEFAULT: "#0dc143",
           100: "#F5F8FF",
         },
-        "secondary-orange": "#f79761",
+        "secondary-orange": "#f77f61",
         "light-white": {
-          DEFAULT: "rgba(59,60,152,0.03)",
-          100: "rgba(59,60,152,0.02)",
+          DEFAULT: "rgba(13, 193, 67, 1)",
+          100: "rgba(13, 193, 67, 1)",
         },
         grey: "#747A88",
       },
