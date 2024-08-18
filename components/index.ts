@@ -5,4 +5,5 @@ export {default as Footer } from './Footer';
 export {default as SearchBar } from './SearchBar';
 export {default as CustomFilter } from './CustomFilter';
 export {default as SearchMenuFacturer } from './SearchMenuFacturer';
-
+export {default as CarCard } from './CarCard';
+export {default as CarDetails } from './CarDetails';

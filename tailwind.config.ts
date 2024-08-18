@@ -16,14 +16,14 @@ module.exports = {
         "black-100": "#000",
         "primary-blue": {
           DEFAULT: "#0dc143",
-          100: "#F5F8FF",
+          100: "#0ec144",
         },
         "secondary-orange": "#f77f61",
         "light-white": {
           DEFAULT: "rgba(13, 193, 67, 1)",
           100: "rgba(13, 193, 67, 1)",
         },
-        grey: "#747A88",
+        grey: "#ffffff",
       },
       backgroundImage: {
         'pattern': "url('/pattern.png')",
