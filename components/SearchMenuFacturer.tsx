@@ -22,11 +22,11 @@ const SearchMenuFacturer = ({manufacterer, setManufacterer}: SearchMenuFacturerP
     <div className='search0-menuFacturer'>
         <Combobox value={manufacterer} onChange={setManufacterer}>
             <div className='relative w-full'>
-                <Combobox.Button className="absolute top-[14px]">
-                  <Image src='/car-logo.svg' alt='car-logo' width={20} height={20} className='ml-40 -mt-3'/>
+                <Combobox.Button className="absolute top-[14px] left-5">
+                  <Image src='/car-logo.svg' alt='car-logo' width={20} height={20} />
                 </Combobox.Button>
                 <Combobox.Input 
-                className='search-manufacterer__input'
+                className='search-manufacturer__input '
                 placeholder='Volkswagen'
                 displayValue={(manufacterer:string)=>manufacterer}
                 onChange= {(e)=>setQuery(e.target.value)}

@@ -20,7 +20,7 @@ module.exports = {
         },
         "secondary-orange": "#f77f61",
         "light-white": {
-          DEFAULT: "rgba(13, 193, 67, 1)",
+          DEFAULT: "rgba(59,60,152,0.03)",
           100: "rgba(13, 193, 67, 1)",
         },
         grey: "#ffffff",
