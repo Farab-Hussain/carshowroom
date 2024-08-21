@@ -5,6 +5,8 @@ import SearchMenuFacturer from './SearchMenuFacturer';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Input } from '@headlessui/react';
+import { SearchParamsContext } from 'next/dist/shared/lib/hooks-client-context.shared-runtime';
+import { useRouter } from 'next/navigation';
 
 const SearchBar = () => {
   const SearchButton = ({otherClasses}:{otherClasses:string}) => {
@@ -31,19 +33,36 @@ const SearchBar = () => {
 
   const [manufacterer, setManufacterer] = useState('');
   const [model, setmodel] = useState('');
+  const router = useRouter();
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if(manufacterer === '' && model === '') {
       return alert('Please provide some input');
     }
-    console.log(manufacterer, model);
+
+    updateSearchParams(model.toLocaleLowerCase(), manufacterer.toLocaleLowerCase())
   }
 
   const updateSearchParams = (model:string,  manufacterer:string) =>{
-    // const seaarchParams = new
+    const seaarchParams = new URLSearchParams(window.location.search)
+
+    if(model){
+      seaarchParams.set(model,'model')
+    }else{
+      seaarchParams.delete('model')
+    }
+
+
+    if(manufacterer){
+      seaarchParams.set(manufacterer,'manufacterer')
+    }else{
+      seaarchParams.delete('manufacterer')
+    }
+
+    const newPathname = `${window.location.pathname}?${seaarchParams.toString()}`
+
+    router.push(newPathname)
   }
-
-
 
 
 

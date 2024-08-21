@@ -5,11 +5,23 @@ import { fetchCars } from "@/utils";
 import Image from "next/image";
 import { CarCard } from "@/components";
 import { CarProps } from "@/types"; // Import CarProps type
-
-export default async function Home() {
-  const params = {}; // Define params here
-  const data: CarProps[] = await fetchCars(); // Specify the type of data
-  console.log('Fetching cars with parameters:', params); // Add this line to log the parameters
+import { fuels, manufacturers } from "@/constants";
+export default async function Home({ searchParams }: { searchParams: { [key: string]: string } }) {
+  const params = { // Define params here
+    manufacturers: searchParams?.manufacturer || '',
+    limit: Number(searchParams?.limit) || 2020, // Parse limit as a number
+    model: searchParams?.model || '',
+    year: Number(searchParams?.year) || undefined, // Change '' to undefined
+    fuel: searchParams?.fuel || '',
+  };
+  const data: CarProps[] = await fetchCars({ // Pass params directly
+    manufacturers: params.manufacturers,
+    limit: params.limit,
+    model: params.model,
+    year: params.year || 0, // Ensure year is always a number
+    fuel: params.fuel,
+  });
+  // console.log('Fetching cars with parameters:', params); // Log the parameters
   const allCars = data; 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1; 
 
