@@ -4,10 +4,15 @@ import SearchBar from "@/components/SearchBar";
 import { fetchCars } from "@/utils";
 import Image from "next/image";
 import { CarCard } from "@/components";
-import { CarProps } from "@/types"; // Import CarProps type
-import { fuels, manufacturers } from "@/constants";
-export default async function Home({ searchParams }: { searchParams: { [key: string]: string } }) {
-  const params = { // Define params here
+import { CarProps } from "@/types"; 
+import { fuels, manufacturers, yearsOfProduction } from "@/constants";
+
+
+
+export default async function Home({ searchParams }: 
+  { searchParams: { [key: string]: string } }) {
+  
+    const params = { // Define params here
     manufacturers: searchParams?.manufacturer || '',
     limit: Number(searchParams?.limit) || 2020, // Parse limit as a number
     model: searchParams?.model || '',
@@ -37,8 +42,8 @@ export default async function Home({ searchParams }: { searchParams: { [key: str
           <div className="home__filters">
             <SearchBar/>
             <div className="home__filter-container">
-              <CustomFilter title='fuel'/>
-              <CustomFilter title='year'/>
+              <CustomFilter title='fuel' options={fuels} />
+              <CustomFilter title='year' options={yearsOfProduction} />
             </div>
           </div>
         </div>

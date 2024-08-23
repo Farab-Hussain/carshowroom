@@ -1,5 +1,6 @@
 import { CarProps, FilterProps } from "@/types";
 
+
 export async function fetchCars(filter: FilterProps) {
     const {manufacturers, limit, model, year, fuel} = filter
     const headers = {
@@ -42,6 +43,7 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
     // Get the current URL search params
     const searchParams = new URLSearchParams(window.location.search);
   
+    
     // Set the specified search parameter to the given value
     searchParams.set(type, value);
   
@@ -64,4 +66,15 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
     url.searchParams.append('angle', `${angle}` );
 
     return`${url}`
+}
+
+export const updateSearchParams = (type:string , value:string) =>{
+    const seaarchParams = new URLSearchParams(window.location.search)
+
+    seaarchParams.set(type, value)
+
+   const newPathname = `${window.location.pathname}?${seaarchParams.toString()}`
+
+   return newPathname;
+
 }
