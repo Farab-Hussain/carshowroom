@@ -14,7 +14,8 @@ Custom UI Elements: Includes custom-built filter components, combo boxes, and mo
 Metadata Optimization: Ensures the application is SEO-friendly by optimizing metadata for search engines.
 
 Organized File Structure: Emphasizes clean code and a well-organized project structure to maintain scalability and ease of development.
-Technologies Used
+
+**Technologies Used**
 
 Next.js 14: React framework with cutting-edge features such as the App Router and SSR.
 
